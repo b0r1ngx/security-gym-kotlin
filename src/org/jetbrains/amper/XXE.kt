@@ -6,7 +6,7 @@ import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
 
 class XXE {
-    // The given XML processing code is vulnerable to XXE attack
+    // The given XML processing code is vulnerable to XXE (XML External Entity) attack
     fun getUsernameFromXml(xml: String): String {
         val dbf: DocumentBuilderFactory = DocumentBuilderFactory.newInstance()
         val db: DocumentBuilder = dbf.newDocumentBuilder()
